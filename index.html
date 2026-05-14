@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YOLO — You Only Look Once</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,500;0,9..40,700;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="noise"></div>
+
+  <header class="site-header">
+    <div class="header-tag">Visualisasi Algoritma</div>
+    <h1 class="site-title">YOLO <em>You Only Look Once</em></h1>
+    <p class="site-sub">Deteksi objek real-time dalam satu kali forward pass</p>
+  </header>
+
+  <main>
+    <!-- Step Navigation -->
+    <nav class="step-nav" aria-label="Langkah algoritma">
+      <button class="step-pill active" data-step="0">
+        <span class="pill-num">01</span>
+        <span class="pill-label">Input</span>
+      </button>
+      <div class="step-connector"></div>
+      <button class="step-pill" data-step="1">
+        <span class="pill-num">02</span>
+        <span class="pill-label">Grid</span>
+      </button>
+      <div class="step-connector"></div>
+      <button class="step-pill" data-step="2">
+        <span class="pill-num">03</span>
+        <span class="pill-label">Prediksi</span>
+      </button>
+      <div class="step-connector"></div>
+      <button class="step-pill" data-step="3">
+        <span class="pill-num">04</span>
+        <span class="pill-label">Bounding Box</span>
+      </button>
+      <div class="step-connector"></div>
+      <button class="step-pill" data-step="4">
+        <span class="pill-num">05</span>
+        <span class="pill-label">NMS</span>
+      </button>
+      <div class="step-connector"></div>
+      <button class="step-pill" data-step="5">
+        <span class="pill-num">06</span>
+        <span class="pill-label">Output</span>
+      </button>
+    </nav>
+
+    <!-- Main Canvas Area -->
+    <section class="canvas-section">
+      <canvas id="mainCanvas" width="900" height="420" aria-label="Visualisasi langkah YOLO"></canvas>
+    </section>
+
+    <!-- Info Panel -->
+    <section class="info-panel">
+      <div class="info-left">
+        <div class="step-badge" id="stepBadge">01</div>
+        <h2 class="step-title" id="stepTitle">Input Gambar</h2>
+        <p class="step-desc" id="stepDesc"></p>
+
+        <div class="metric-row" id="metricRow"></div>
+      </div>
+
+      <div class="info-right">
+        <div class="legend-block" id="legendBlock"></div>
+
+        <div class="formula-box" id="formulaBox"></div>
+      </div>
+    </section>
+
+    <!-- Nav Controls -->
+    <div class="nav-controls">
+      <button class="ctrl-btn" id="prevBtn" disabled aria-label="Langkah sebelumnya">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Sebelumnya
+      </button>
+      <div class="progress-dots" id="progressDots"></div>
+      <button class="ctrl-btn primary" id="nextBtn" aria-label="Langkah berikutnya">
+        Berikutnya
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span>YOLO — Redmon et al., 2016</span>
+    <span class="footer-sep">·</span>
+    <span>Real-time Object Detection</span>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
